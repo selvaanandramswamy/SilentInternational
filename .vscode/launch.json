@@ -33,7 +33,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "C:\\SilentInterNational\\index.html"
+            "file": "C:\\SIWebsite\\Index.html"
             
         }
     ]
