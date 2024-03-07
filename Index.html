@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Silent International</title>
+<meta charset="utf-8"/>
+<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="./Style/styles.css" type="text/css">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+       
+     $('#testnav').hide(); 
+     $('#open-icon').show();
+     $('#close-icon').hide();
+
+    
+      $('#close-icon').click(function(e) {
+        e.preventDefault();
+        $('#testnav').hide();      
+        $('#close-icon').hide();
+        $('#open-icon').show();
+                
+        return false;
+      });
+
+
+      $('#open-icon').click(function(e) {
+        e.preventDefault();
+       
+        $('#testnav').show();    
+        $('#close-icon').show();
+        $('#open-icon').hide();  
+                
+        return false;
+      });
+      
+
+});
+</script>
+</head>
+<body>
+    <header class="header-menu">
+        <a href="" class="logo">Silent International</a>
+       
+        <div class="label-icons">
+        <input type="checkbox" id="check">       
+        <label class="icons" for="check">
+          <!--<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAATElEQVRIS2NkoDFgpLH5DKMWEAzhAQmi/wSdhV8BiqOx+YDmFlDoAVTtAxIHNPcBzeOA5hbQPIiGvgU0jwOaWzD042DUByghQPPSFABt6AYZfO/+XQAAAABJRU5ErkJggg=="/>-->
+          <i class='bx bx-menu' id="open-icon"></i>
+          <i class='bx bx-closet' id="close-icon"></i>
+        </label>
+       </div>
+       <nav class="navbar" id="testnav">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contacts</a>
+        <a href="#">Careers</a>
+        
+    </nav> 
+        
+    </header>
+    
+    <section class="diagonal">
+        <div class="wrapper">
+            <h2 class="section-detail"></h2>
+            <p></p>
+        </div>
+    </section>
+</body>
+
+</html>
