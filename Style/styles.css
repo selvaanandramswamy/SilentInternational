@@ -1,0 +1,251 @@
+
+
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Card*/
+
+*,
+*::before,
+::after {
+
+box-sizing:border-box;
+/*background: #FAF9F6;*/
+/*background: white;*/
+
+} 
+
+html{
+    color-scheme: light;
+}  
+
+body{
+    font-family: system-ui;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin:0;
+}
+
+/*.site-detail{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}*/
+
+/* .header_image{
+    background-color: rgb(2, 29, 29);
+    background-image: url(../images/edited_Assam_Dust\ tea_image.JPG);
+    background-repeat: no-repeat;
+    background-size: 1800px;
+    height: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+} */
+.wrapper{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    color: #031e16;
+
+}
+section{
+
+    padding-block: 5rem;
+}
+
+
+
+
+.diagonal{
+
+    --skew-angle :-1deg;
+    --background:
+    /*#33006F;*/
+    linear-gradient(45deg, #33006F,#008B8B,#f3f4f5) ;
+    /*linear-gradient(45deg, #eaeff2,#008B8B,#f3f4f5) ;*/
+    position:relative;
+    isolation: isolate;
+    bottom:-4.5rem;
+    
+}
+
+.diagonal::after{
+
+    position: absolute;
+    content: '';
+    background: var(--background);
+    
+    inset: 0;
+    transform: skewY(var(--skew-angle));
+    z-index: -1;
+
+
+}
+
+.header-menu{
+
+    position: absolute;
+    top:0;
+    left:0;
+    height: 3.5rem;
+    width: 100%;
+    padding: 1.3rem 10%;
+    /*background:white;
+    /*background:#FAF9F6;*/
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+
+.header-menu::before{
+
+    position: absolute;
+    top:0;
+    left:0;
+    content:'' ;
+    width: 100%;
+    height: 100%;
+    /*background:rgba(0,0,0,.1);*/
+    background: border-box;
+    backdrop-filter: blur(50px);
+    z-index: -1;
+
+}
+
+.leavespace{
+
+    position: absolute;
+    top:0;
+    left:0;
+    height: 1.5rem;
+    width: 100%;
+    padding: 1.3rem 10%;
+    border: 15px solid;
+
+}
+
+.logo{
+
+    /*font-size: 2rem;
+    color: #031e16;
+    text-decoration: none;
+    font-weight: 700;*/
+    font-size: 1rem;
+    color: #00CCCC;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    top: -10px;
+    
+}
+.navbar a{
+    
+    font-size: 1.15rem;
+    color: #00CCCC;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+
+}
+
+.icons{
+    position: absolute;
+    right:8px;
+    top:12px;
+    font-size: 1.5rem;
+    /*color: #91d610;*/
+    color: #00CCCC;
+    cursor: pointer;
+    /*display:block;*/
+}
+
+
+.icons #close-icon{
+    display: none;
+  }
+
+  #check{
+    display: none;
+  }
+
+ /* #check:checked~.icons #open-icon{
+    display: none;
+} */
+
+#check:checked~.icons #close-icon{
+    display: block;
+} 
+
+
+.label-icons{
+    width: 10%;
+    margin: .5px 0px 0px 0px;
+    background: rgba(235, 18, 18, 0.1);
+}
+
+
+/*https://www.youtube.com/watch?v=yE9DLIoDwCg*/
+@media(max-width:992x){
+    .header-menu{
+        padding: 1.3rem 5% ;
+    }
+}
+
+@media(max-width:768px){
+    
+     .icons{
+       /* display: block;*/
+        display: inline-flex;
+    } 
+    
+    #check:checked~.navbar{
+        height: 17.7rem;
+        background:rgb(119, 0, 255) ;
+        z-index: -1;
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        height: 17.7rem;
+        /*background:red ;*/
+        background:rgba(0,0,0,.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0.5rem,1rem,rgba(0,0,0,.1);
+        transition: .3s ease;
+        display: grid;
+    }
+
+    .navbar a{
+        /*display: block;*/
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        background:#ebeaf1;
+        
+    } 
+
+   /* #check:checked~.navbar{
+    
+        padding:15px solid green ;
+        
+    }*/
+    
+    #check:checked~.navbar a{
+    
+        transform: translateY(-50px);
+        
+    }
+
+    /*#check:checked~.navbar #testnav{
+        position: relative;
+        display: none;
+    }*/
+
+}
